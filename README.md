@@ -5,12 +5,6 @@
 [![License](https://img.shields.io/cocoapods/l/LVBaseKit.svg?style=flat)](https://cocoapods.org/pods/LVBaseKit)
 [![Platform](https://img.shields.io/cocoapods/p/LVBaseKit.svg?style=flat)](https://cocoapods.org/pods/LVBaseKit)
 
-## Example
-
-To run the example project, clone the repo, and run `pod install` from the Example directory first.
-
-## Requirements
-
 ## Installation
 
 LVBaseKit is available through [CocoaPods](https://cocoapods.org). To install
@@ -22,8 +16,4 @@ pod 'LVBaseKit'
 
 ## Author
 
-newhl, 954777574@qq.com
-
-## License
-
-LVBaseKit is available under the MIT license. See the LICENSE file for more info.
+testor, 954777574@qq.com
