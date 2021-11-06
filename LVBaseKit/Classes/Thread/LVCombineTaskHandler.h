@@ -51,7 +51,6 @@ typedef void(^normalTaskBlock)(const dispatch_queue_t queue); ///queue ：当前
 
 @end
 
-
 /**
  @brief 利用GCD_Barrier实现读写任务
  

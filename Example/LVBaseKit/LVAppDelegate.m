@@ -7,12 +7,15 @@
 //
 
 #import "LVAppDelegate.h"
+#import <LVBaseKit/LVCrashHandler.h>
 
 @implementation LVAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
+    
+    [LVCrashHandler registerExceptionHandler];
     return YES;
 }
 

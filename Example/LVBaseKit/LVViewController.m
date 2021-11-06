@@ -22,10 +22,14 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    [self test2];
+    [self test4];
 }
 
 #pragma mark - Test
+
+- (void)test4 {
+    
+}
 
 - (void)test2 {
     _handler2 = [[LVBarrierReadWriteHander alloc] init];
