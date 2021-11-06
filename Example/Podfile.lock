@@ -1,0 +1,16 @@
+PODS:
+  - LVBaseKit (0.1.0)
+
+DEPENDENCIES:
+  - LVBaseKit (from `../`)
+
+EXTERNAL SOURCES:
+  LVBaseKit:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  LVBaseKit: bc513b076ea3b9ee4f655509e4b840ab399e5c0d
+
+PODFILE CHECKSUM: 2a2bed5245faa4bff9ef871284c7f49fe8ce4e79
+
+COCOAPODS: 1.10.0
