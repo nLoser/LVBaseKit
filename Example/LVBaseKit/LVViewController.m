@@ -12,6 +12,7 @@
 
 @interface LVViewController () {
     LVGCDCombinTaskHandler *_handler;
+    LVBarrierReadWriteHander *_handler2;
 }
 
 @end
@@ -21,10 +22,48 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    [self test1];
+    [self test2];
 }
 
 #pragma mark - Test
+
+- (void)test2 {
+    _handler2 = [[LVBarrierReadWriteHander alloc] init];
+    __weak typeof(self) weakSelf = self;
+    [_handler2 addReadTask:^(const dispatch_queue_t  _Nonnull queue) {
+        [weakSelf test3];
+    }];
+    [_handler2 addReadTask:^(const dispatch_queue_t  _Nonnull queue) {
+        [weakSelf test3];
+    }];
+    [_handler2 addWriteTask:^(const dispatch_queue_t  _Nonnull queue) {
+        NSLog(@"------- write -------");
+        sleep(2);
+    }];
+    [_handler2 addReadTask:^(const dispatch_queue_t  _Nonnull queue) {
+        [weakSelf test3];
+    }];
+    [_handler2 addWriteTask:^(const dispatch_queue_t  _Nonnull queue) {
+        NSLog(@"------- write -------");
+        sleep(2);
+    }];
+    [_handler2 addReadTask:^(const dispatch_queue_t  _Nonnull queue) {
+        [weakSelf test3];
+    }];
+    [_handler2 addReadTask:^(const dispatch_queue_t  _Nonnull queue) {
+        [weakSelf test3];
+    }];
+}
+
+- (void)test3 {
+    NSInteger timeout = MAX(random()%10, 1);
+    NSInteger idn = random()%1000000;
+    NSLog(@"开始读%ld秒-%ld", (long)timeout,idn);
+    
+    sleep((int)timeout);
+    
+    NSLog(@"---%ld结束",idn);
+}
 
 - (void)test1 {
     _handler = [[LVGCDCombinTaskHandler alloc] init];

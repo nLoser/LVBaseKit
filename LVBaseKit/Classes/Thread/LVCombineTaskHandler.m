@@ -68,3 +68,47 @@
 }
 
 @end
+
+
+@interface LVBarrierReadWriteHander ()
+
+@property (nonatomic, strong) dispatch_queue_t queue;
+
+@end
+
+@implementation LVBarrierReadWriteHander
+
+#pragma mark - Life Cycle
+
+- (instancetype)init {
+    if (self = [super init]) {
+        dispatch_queue_attr_t attr = dispatch_queue_attr_make_with_qos_class(DISPATCH_QUEUE_CONCURRENT, QOS_CLASS_USER_INITIATED, 0);
+        _queue = dispatch_queue_create("com.lv.rw", attr);
+    }
+    return self;
+}
+
+#pragma mark - Public Method
+
+- (void)addReadTask:(normalTaskBlock)task {
+    __weak typeof(self) weakSelf = self;
+    dispatch_async(self.queue, ^{
+        __weak typeof(weakSelf) strongSelf = weakSelf;
+        if (task && strongSelf) {
+            task(strongSelf.queue);
+        }
+    });
+}
+
+- (void)addWriteTask:(normalTaskBlock)task {
+    __weak typeof(self) weakSelf = self;
+    dispatch_barrier_async(self.queue, ^{
+        NSLog(@"barrier:%@", [NSThread currentThread]);
+        __weak typeof(weakSelf) strongSelf = weakSelf;
+        if (task && strongSelf) {
+            task(strongSelf.queue);
+        }
+    });
+}
+
+@end
