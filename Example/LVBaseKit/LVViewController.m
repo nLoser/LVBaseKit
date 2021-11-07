@@ -19,9 +19,9 @@
 
 @implementation LVViewController
 
-- (void)viewDidLoad
-{
+- (void)viewDidLoad {
     [super viewDidLoad];
+    self.view.backgroundColor = [UIColor redColor];
     [self test4];
 }
 

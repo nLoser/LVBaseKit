@@ -247,6 +247,9 @@
 				LastUpgradeCheck = 0720;
 				ORGANIZATIONNAME = newhl;
 				TargetAttributes = {
+					6003F589195388D20070C39A = {
+						DevelopmentTeam = F67ZAS34BD;
+					};
 					6003F5AD195388D20070C39A = {
 						TestTargetID = 6003F589195388D20070C39A;
 					};
@@ -494,6 +497,7 @@
 			baseConfigurationReference = E2280FEA971996D1761EFAD1 /* Pods-LVBaseKit_Example.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = F67ZAS34BD;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "LVBaseKit/LVBaseKit-Prefix.pch";
 				INFOPLIST_FILE = "LVBaseKit/LVBaseKit-Info.plist";
@@ -510,6 +514,7 @@
 			baseConfigurationReference = AA285D0750FCCBC2E73C3963 /* Pods-LVBaseKit_Example.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = F67ZAS34BD;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "LVBaseKit/LVBaseKit-Prefix.pch";
 				INFOPLIST_FILE = "LVBaseKit/LVBaseKit-Info.plist";

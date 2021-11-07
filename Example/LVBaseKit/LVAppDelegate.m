@@ -16,6 +16,14 @@
     // Override point for customization after application launch.
     
     [LVCrashHandler registerExceptionHandler];
+    
+//    dispatch_group_t group = dispatch_group_create();
+//    dispatch_group_leave(group);
+    
+//    NSArray *arr = @[];
+//    
+//    [arr objectAtIndex:1];
+    
     return YES;
 }
 
